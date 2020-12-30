@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  scalyr-agent:
+    image: defn/scalyr-agent
+    env_file: .env
+    command:
+      - --no-fork
+      - --no-change-user
+      - start
+    volumes:
+      - /var/run/docker.sock:/var/scalyr/docker.sock
+      - /var/lib/docker/containers:/var/lib/docker/containers
+    restart: always
