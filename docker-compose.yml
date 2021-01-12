@@ -4,7 +4,7 @@ services:
   scalyr-agent:
     image: defn/scalyr-agent
     hostname: ${HOSTNAME}
-    env_file: .env
+    env_file: .env.agent
     command:
       - --no-fork
       - --no-change-user
